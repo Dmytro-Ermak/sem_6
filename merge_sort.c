@@ -2,7 +2,6 @@
 
 void merge_sort(int* array, int part_len, int len) {
 	if (part_len >= len) {return;}
-	print(array);
 	int* first = (int*) malloc(sizeof(int) * (part_len + 1));
 	int* second = (int*) malloc(sizeof(int) * (part_len + 1));
 	for (int l = 0; l < len;) {

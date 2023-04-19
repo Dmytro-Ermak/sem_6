@@ -3,8 +3,6 @@
 
 void quick_sort(int array[]) {
     int len = len_cnt(array);
-    printf("%i\n", len);
-    // int arrays[5000]
     int arrays_len = 0;
     int *arrays = (int *) malloc(sizeof(int) * (5 + arrays_len));
     arrays[arrays_len++] = 1;
@@ -33,7 +31,7 @@ void quick_sort(int array[]) {
             SWAP(array[j], array[anchor_prev]);
             SWAP(array[anchor_prev], array[anchor_location]);
         }
-        print(array);
+        //print(array);
         arrays = (int*) realloc(arrays, (arrays_len + 5) * sizeof(int));
         //printf("%i %i %i\n", start, anchor_location, arrays[i - 1]);
         arrays[arrays_len++] = start + 1;
