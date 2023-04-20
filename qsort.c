@@ -1,8 +1,9 @@
 #include "swap.h"
 #include "add.h"
 
-void quick_sort(int array[]) {
-    int len = len_cnt(array);
+void quick_sort(int* array_copy) {
+    int len = *array_copy;
+    int* array = array_copy + 1;
     int arrays_len = 0;
     int *arrays = (int *) malloc(sizeof(int) * (5 + arrays_len));
     arrays[arrays_len++] = 1;

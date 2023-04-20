@@ -1,13 +1,17 @@
 #include "add.h"
 
-void print(int* array){
-	int k = 0;
-	while(array[k]){printf("%i ", array[k++]);} putchar('\n');
+void print(int* array) {
+	for(int k = 1; k < *array + 1; k++) { 
+        printf("%i ", array[k]);
+    } 
+    putchar('\n');
 }
 
 int len_cnt(int* array) {
     int i = 0;
-    while(array[++i]);
+    for(; array[i+1]; i++) {
+        //printf("%i %i\n", array[i], i);
+    }
     return i;
 }
 

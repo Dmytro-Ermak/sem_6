@@ -1,14 +1,16 @@
 #include "add.h"
 
-void merge_sort(int* array, int part_len, int len) {
-	if (part_len >= len) {return;}
+void merge_sort(int* array_copy, int part_len) {
+	putchar('\n');print(array_copy);putchar('\n');
+	int* array = array_copy + 1;
+	if (part_len >= *array_copy) {return;}
 	int* first = (int*) malloc(sizeof(int) * (part_len + 1));
 	int* second = (int*) malloc(sizeof(int) * (part_len + 1));
-	for (int l = 0; l < len;) {
+	for (int l = 0; l < *array_copy;) {
 		for (int i = 0; i < part_len; i++) {
 			first[i] = array[l + i];
             first[i + 1] = 0;
-            if (len >= l + i + part_len) {
+            if (*array_copy >= l + i + part_len) {
             	second[i] = array[l + i + part_len];
             } else {
             	second[i] = 0;
@@ -30,8 +32,9 @@ void merge_sort(int* array, int part_len, int len) {
 				array[l++] = first[i++];
 			}
 		}
+		
 	}
 	free(first);
 	free(second);
-	merge_sort(array, part_len << 1, len);
+	merge_sort(array_copy, part_len << 1);
 }
