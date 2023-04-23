@@ -3,4 +3,4 @@ project(sem_6)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable (6 main.c merge_sort.c qsort.c redex.c bin_search.c add.c)
+add_executable (6 main.c merge_sort.c qsort.c redex.c bin_search.c add.c sort.h swap.h bin.h add.h)
